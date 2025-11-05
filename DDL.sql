@@ -9,10 +9,10 @@ CREATE TABLE barberia(
 CREATE TABLE barbero(
     nro_legajo INT PRIMARY KEY,
     ci CHAR(8) NOT NULL,
-    primer_nombre VARCHAR(20),
-    segundo_nombre VARCHAR(20),
-    primer_apellido VARCHAR(20),
-    segundo_apellido VARCHAR(20),
+    primer_nombre VARCHAR(30),
+    segundo_nombre VARCHAR(30),
+    primer_apellido VARCHAR(30),
+    segundo_apellido VARCHAR(30),
     fecha_ingreso DATE
 );
 
@@ -52,10 +52,33 @@ CREATE TABLE servicio(
     precio_servicio INT,
 );
 CREATE TABLE brinda_servicio(
-    
+    nro_legajo INT,
+    codigo_servicio INT,
+    PRIMARY KEY(nro_legajo, codigo_barberia),
+    CONSTRAINT fk_servicio_nro_legajo
+        FOREIGN KEY nro_legajo
+        REFERENCES barbero(nro_legajo),
+    CONSTRAINT fk_codigo_servicio
+        FOREIGN KEY codigo_servicio
+        REFERENCES servicio(codigo_servicio),
 );
-CREATE TABLE clientes();
-CREATE TABLE telefono_cliente();
+CREATE TABLE clientes(
+    num_cliente INT PRIMARY KEY,
+    primer_nombre VARCHAR(30),
+    segundo_nombre VARCHAR(30),
+    primer_apellido VARCHAR(30),
+    segundo_apellido VARCHAR(30),
+    correo VARCHAR(30),
+    id_membresia INT
+);
+CREATE TABLE telefono_cliente(
+    num_cliente INT,
+    telefono_cliente varchar(10),
+    PRIMARY KEY (num_cliente, telefono_cliente)
+    CONSTRAINT KEY fk_telefono_cliente
+        FOREIGN KEY num_cliente
+        REFERENCES clientes(num_cliente)
+);
 CREATE TABLE turno();
 CREATE TABLE se_realiza();
 CREATE TABLE pago();
