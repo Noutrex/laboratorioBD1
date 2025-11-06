@@ -75,16 +75,81 @@ CREATE TABLE telefono_cliente(
     num_cliente INT,
     telefono_cliente varchar(10),
     PRIMARY KEY (num_cliente, telefono_cliente)
-    CONSTRAINT KEY fk_telefono_cliente
+    CONSTRAINT fk_telefono_cliente
         FOREIGN KEY num_cliente
         REFERENCES clientes(num_cliente)
 );
-CREATE TABLE turno();
-CREATE TABLE se_realiza();
-CREATE TABLE pago();
-CREATE TABLE membresia();
-CREATE TABLE encuesta();
-CREATE TABLE medio_pago();
-CREATE TABLE telefono_barberia();
+CREATE TABLE turno(
+    id_turno INT PRIMARY KEY, 
+    num_cliente INT,
+    fecha_turno DATE, 
+    hora_turno TIME, 
+    codigo_barberia INT, 
+    nro_legajo INT
+    CONSTRAINT fk_turno_barberia
+        FOREIGN KEY codigo_barberia
+        REFERENCES barberia(codigo_barberia),
+    CONSTRAINT fk_turno_cliente
+        FOREIGN KEY num_cliente
+        REFERENCES clientes(num_cliente),
+    CONSTRAINT fk_turno_barbero
+        FOREIGN KEY nro_legajo
+        REFERENCES barbero(nro_legajoe),
+
+);
+CREATE TABLE se_realiza(
+    id_turno INT PRIMARY KEY,
+    nro_legajo INT PRIMARY KEY, 
+    codigo_servicio INT PRIMARY KEY, 
+    precio_final INT,
+    CONSTRAINT fk_turno_realiza
+        FOREIGN KEY id_turno
+        REFERENCES turno(id_turno)
+    CONSTRAINT fk_realiza_barberia
+        FOREIGN KEY codigo_barberia
+        REFERENCES barberia(codigo_barberia),
+    CONSTRAINT fk_realiza_barbero
+        FOREIGN KEY nro_legajo
+        REFERENCES barbero(nro_legajo),
+);
+CREATE TABLE pago(
+    id_pago INT PRIMARY KEY, 
+    monto_total INT, 
+    fecha_pago DATE, 
+    id_turno INT, 
+    id_medio_pago INT
+    CONSTRAINT fk_pago_turno
+        FOREIGN KEY id_turno
+        REFERENCES turno(id_turno)
+    CONSTRAINT fk_pago_medio
+        FOREIGN KEY id_medio_pago
+        REFERENCES medio_pago(id_medio_pago)
+);
+CREATE TABLE membresia(
+    id_membresia INT PRIMARY KEY,
+    nombre_membresia VARCHAR(30), 
+    beneficios INT, 
+    costo_mensual INT, 
+    codigo_servicio INT,
+    CONSTRAINT fk_membresia_servicio
+        FOREIGN KEY codigo_servicio
+        REFERENCES servicio(codigo_servicio)
+);
+CREATE TABLE encuesta(
+    id_encuesta INT PRIMARY KEY, 
+    fecha_encuesta DATE, 
+    comentario VARCHAR(100), 
+    puntuacion INT, 
+    id_turno INT
+
+);
+CREATE TABLE medio_pago(
+    id_medio_pago INT PRIMARY KEY, 
+    nombre_medio_pago VARCHAR(50)
+);
+CREATE TABLE telefono_barberia(
+    odigo_barberia INT PRIMARY KEY, 
+    telefono_barberia VARCHAR(20),
+);
 
 
