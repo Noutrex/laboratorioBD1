@@ -146,6 +146,9 @@ CREATE TABLE encuesta(
     comentario VARCHAR(100), 
     puntuacion INT, 
     id_turno INT
+    CONSTRAINT fk_membresia_servicio
+        FOREIGN KEY (id_turno)
+        REFERENCES turno(id_turno)
 
 );
 
