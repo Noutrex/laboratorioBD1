@@ -13,7 +13,8 @@ CREATE TABLE barbero(
     segundo_nombre VARCHAR(30),
     primer_apellido VARCHAR(30),
     segundo_apellido VARCHAR(30),
-    fecha_ingreso DATE
+    fecha_ingreso DATE,
+    especialidad VARCHAR(30),
 );
 
 CREATE TABLE trabajan(
