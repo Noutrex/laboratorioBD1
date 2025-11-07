@@ -16,7 +16,7 @@ INSERT INTO barbero (nro_legajo, ci, primer_nombre, segundo_nombre, primer_apell
 (2, '12123512', 'Nestor', 'Pedro', 'Quirno', 'Garcia', '2023-03-08'),
 (3, '73736346', 'Mateo', 'Felipe', 'Robaina', 'Martin', '2020-01-01'),
 (4, '35262625', 'Marcelo', 'Mauro', 'Perez', 'Garcia', '2018-06-29'),
-(5, '62622254', 'Antonio', 'Ignacio', 'Madera', 'Verde', '2022-05-31');
+(5, '62622254', 'Antonio', 'Ignacio', 'Madera', 'Verde', '2022-05-31'),
 (6, '44556677', 'Lucía', 'Mariana', 'Alvarez', 'Pereira', '2021-09-14'),
 (7, '77889900', 'Gabriel', 'Tomás', 'Suárez', 'Ramos', '2019-04-27');
 
@@ -24,11 +24,11 @@ INSERT INTO barbero (nro_legajo, ci, primer_nombre, segundo_nombre, primer_apell
 -- TABLA: trabajan
 -- =========================
 INSERT INTO trabajan (codigo_barberia, nro_legajo, dia, hora_inicio, hora_fin) VALUES
-(1, 1, '2025-11-10', '09:00', '13:00')
+(1, 1, '2025-11-10', '09:00', '13:00'),
 (1, 1, '2025-11-10', '15:00', '19:00'),
 (2, 2, '2025-11-10', '10:00', '14:00'),
 (3, 3, '2025-11-11', '08:30', '12:30'),
-(4, 4, '2025-11-12', '09:30', '13:30')
+(4, 4, '2025-11-12', '09:30', '13:30'),
 (2, 4, '2025-11-12', '15:30', '18:30'),
 (5, 5, '2025-11-13', '10:00', '14:00');
 
@@ -39,7 +39,7 @@ INSERT INTO senior (nro_legajo, anios_experiencia, tiene_certificado) VALUES
 (1, 12, TRUE),
 (2, 8, TRUE),
 (3, 10, TRUE),
-(4, 6, FALSE),
+(4, 6, FALSE);
 
 
 -- =========================
@@ -48,7 +48,7 @@ INSERT INTO senior (nro_legajo, anios_experiencia, tiene_certificado) VALUES
 INSERT INTO junior (nro_legajo, nombre_academia) VALUES
 (5, 'Academia BarberPro'),
 (6, 'Estilo Urbano'),
-(7, 'Corte y Estilo'),
+(7, 'Corte y Estilo');
 
 
 -- =========================
@@ -65,9 +65,9 @@ INSERT INTO servicio (codigo_servicio, nombre_servicio, duracion, precio_servici
 -- TABLA: brinda_servicio
 -- =========================
 INSERT INTO brinda_servicio (nro_legajo, codigo_servicio) VALUES
-(1, 1),
-(2, 2),
-(3, 3),
+(1, 2),
+(2, 1),
+(3, 5),
 (4, 4),
 (5, 5);
 
@@ -76,9 +76,9 @@ INSERT INTO brinda_servicio (nro_legajo, codigo_servicio) VALUES
 -- =========================
 INSERT INTO clientes (num_cliente, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo, id_membresia) VALUES
 (1, 'Carlos', 'Eduardo', 'Fernández', 'Pérez', 'carlos@mail.com', 1),
-(2, 'María', 'José', 'Gómez', 'Rodríguez', 'maria@mail.com', 2),
+(2, 'José', 'María', 'Gómez', 'Rodríguez', 'maria@mail.com', 2),
 (3, 'Pedro', 'Luis', 'Martínez', 'Silva', 'pedro@mail.com', 3),
-(4, 'Lucía', 'Ana', 'López', 'González', 'lucia@mail.com', 4),
+(4, 'Lucio', 'Pedro', 'López', 'González', 'lucia@mail.com', 4),
 (5, 'Jorge', 'Andrés', 'Ramírez', 'Torres', 'jorge@mail.com', 5);
 
 -- =========================
