@@ -154,8 +154,11 @@ CREATE TABLE encuesta(
 );
 
 CREATE TABLE telefono_barberia(
-    odigo_barberia INT PRIMARY KEY, 
-    telefono_barberia VARCHAR(20)
+    codigo_barberia INT PRIMARY KEY, 
+    telefono_barberia VARCHAR(20),
+    CONSTRAINT fk_telefono
+        FOREIGN KEY (codigo_barberia)
+        REFERENCES barberia(codigo_barberia)
 );
 
 
