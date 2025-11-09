@@ -1,3 +1,4 @@
+--No se usa
 INSERT INTO barbero (nro_legajo, ci, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, fecha_ingreso, especialidad)
 VALUES 
     (1, 11231414, 'Alberto', 'Angel', 'Fernandez','Sanchez', '2022-05-01', 'Corte clásico'),
