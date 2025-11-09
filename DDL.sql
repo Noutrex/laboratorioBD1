@@ -1,7 +1,7 @@
+-- a) CREACION DE LA BASE DE DATOS
 CREATE DATABASE laboratorio;
 USE laboratorio;
-
-
+-- b) CREACION DE LAS TABLAS EN LA BASE DE DATOS
 CREATE TABLE barberia(
     codigo_barberia INT PRIMARY KEY,
     calle VARCHAR(30),
