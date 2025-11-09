@@ -1,3 +1,7 @@
+CREATE DATABASE laboratorio;
+USE laboratorio;
+
+
 CREATE TABLE barberia(
     codigo_barberia INT PRIMARY KEY,
     calle VARCHAR(30),
